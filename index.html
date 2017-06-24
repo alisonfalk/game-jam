@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <script data-require="angular.js@*" data-semver="1.3.0-rc.1" src="https://code.angularjs.org/1.3.0-rc.1/angular.js"></script>
+  <script src="physicsjs-full.js"></script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body ng-app="app" class="container" ng-controller="mainController as main">
+
+  <div style="border:black 1px solid;">
+
+    <physics-canvas width="500" height="500" init="main.init1(world)">
+    <physics-canvas width="500" height="500" init="main.init1(world)">
+
+      <!-- <physics-body type="rectangle" body="main.box1" options="{x:450, y:10, vy:-0.3, width:5, height:5}">
+      </physics-body>
+
+      <physics-body type="rectangle" body="main.box2" options="{x:250, y:210, vy:-0.3, width:5, height:5}">
+      </physics-body>
+
+      <physics-edge-detection min-x="0" min-y="0" max-x="500" max-y="500" restitution="0.3">
+      </physics-edge-detection> -->
+
+      <physics-behavior name="constant-acceleration"></physics-behavior>
+      <physics-behavior name="body-impulse-response"></physics-behavior>
+      <physics-behavior name="body-collision-detection"></physics-behavior>
+      <physics-behavior name="sweep-prune"></physics-behavior>
+
+    </physics-canvas>
+
+    <button ng-click="main.kick1()">Kick E</button>
+    <button ng-click="main.grow()">Grow</button>
+  </div>
+
+</body>
+
+</html>
